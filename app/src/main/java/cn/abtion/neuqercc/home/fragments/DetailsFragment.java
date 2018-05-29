@@ -1,5 +1,6 @@
 package cn.abtion.neuqercc.home.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,12 +29,14 @@ public class DetailsFragment extends BaseFragment {
     ImageView imgDetails;
     @BindView(R.id.txt_details)
     TextView txtDetails;
+
+    public void setData(RaidersAndDetailsRequest data) {
+        this.data = data;
+    }
+
     private RaidersAndDetailsRequest data;
 
 
-    public DetailsFragment(RaidersAndDetailsRequest raidersAndDetailsRequest) {
-        data = raidersAndDetailsRequest;
-    }
 
     @Override
     protected int getLayoutId() {

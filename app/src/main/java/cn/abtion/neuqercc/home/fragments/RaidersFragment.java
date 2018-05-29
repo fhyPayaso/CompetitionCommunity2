@@ -1,5 +1,6 @@
 package cn.abtion.neuqercc.home.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,11 +28,13 @@ public class RaidersFragment extends BaseFragment {
     ImageView imgRaiders;
     @BindView(R.id.txt_raiders)
     TextView txtRaiders;
+
+    public void setData(RaidersAndDetailsRequest data) {
+        this.data = data;
+    }
+
     private RaidersAndDetailsRequest data;
 
-    public RaidersFragment(RaidersAndDetailsRequest raidersAndDetailsRequest) {
-        data = raidersAndDetailsRequest;
-    }
 
     @Override
     protected int getLayoutId() {
@@ -46,12 +49,8 @@ public class RaidersFragment extends BaseFragment {
     @Override
     protected void initView() {
         Glide.with(RaidersFragment.this).load(data.getGod_pic()).into(imgRaiders);
-
         txtRaiders.setText(data.getGod_desc());
-
     }
-
-
     @Override
     protected void loadData() {
 

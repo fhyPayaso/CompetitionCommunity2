@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.abtion.neuqercc.widget.SwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<cn.abtion.neuqercc.widget.SwipeItemLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="75dp"
     android:layout_marginTop="3dp"

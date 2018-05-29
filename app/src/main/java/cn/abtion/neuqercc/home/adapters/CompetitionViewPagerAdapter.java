@@ -39,13 +39,15 @@ public class CompetitionViewPagerAdapter<T> extends FragmentPagerAdapter {
         switch (position){
             case Config.FLAG_DETAILS:
                 if (detailsFragment==null){
-                    detailsFragment = new DetailsFragment(data);
+                    detailsFragment = new DetailsFragment();
+                    detailsFragment.setData(data);
                 }
                 currentFragment = detailsFragment;
                 break;
             case Config.FLAG_RAIDERS:
                 if (raidersFragment==null){
-                    raidersFragment=new RaidersFragment(data);
+                    raidersFragment=new RaidersFragment();
+                    raidersFragment.setData(data);
                 }
                 currentFragment=raidersFragment;
                 break;
