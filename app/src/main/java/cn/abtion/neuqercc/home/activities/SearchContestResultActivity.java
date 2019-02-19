@@ -89,13 +89,7 @@ public class SearchContestResultActivity extends ToolBarActivity {
         RestClient.getService().searchContest(searchContestNameRequest).enqueue(new DataCallback<APIResponse<List<InitContestRecylerViewItemRequest>>>() {
             @Override
             public void onDataResponse(Call<APIResponse<List<InitContestRecylerViewItemRequest>>> call, Response<APIResponse<List<InitContestRecylerViewItemRequest>>> response) {
-
                 initContestRecylerViewItemRequests = response.body().getData();
-
-
-
-                ToastUtil.showToast("akjfnajk");
-
             }
 
             @Override
