@@ -96,14 +96,6 @@ public class SearchContestResultActivity extends ToolBarActivity {
 
                 ToastUtil.showToast("akjfnajk");
 
-
-
-
-
-
-
-
-
             }
 
             @Override
