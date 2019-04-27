@@ -11,7 +11,7 @@ public class Config {
     /**
      * 验证手机号正则
      */
-    public static final String MOBILE_REGEX = "[1][3,4,5,7,8][0-9]{9}$";
+    public static final String MOBILE_REGEX = "[1][0-9]{10}$";
 
     /**
      * 验证邮箱正则
