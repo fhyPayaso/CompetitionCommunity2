@@ -1,8 +1,6 @@
 package cn.abtion.neuqercc.base.activities;
 
-import android.app.ActivityOptions;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -12,17 +10,10 @@ import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Explode;
-import android.transition.Slide;
-
-import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.ButterKnife;
-import cn.abtion.neuqercc.NEUQerCCApplication;
 import cn.abtion.neuqercc.base.fragments.BaseFragment;
 import cn.abtion.neuqercc.common.exceptions.LogicErrorException;
-import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.utils.Utility;
 
 /**

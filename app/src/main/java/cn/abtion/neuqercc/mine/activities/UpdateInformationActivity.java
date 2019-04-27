@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.mine.activities;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -244,6 +243,10 @@ public class UpdateInformationActivity extends ToolBarActivity {
                 flagNameEye, flagPhoneEye);
 
 
+        //弹出progressDialog
+        progressDialog.setMessage(getString(R.string.dialog_wait_moment));
+        progressDialog.show();
+
         if (flagUpLoad) {
 
             File file = new File(photoPath);
@@ -269,6 +272,9 @@ public class UpdateInformationActivity extends ToolBarActivity {
 
                         @Override
                         public void dismissDialog() {
+                            if(progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
                         }
                     });
@@ -294,6 +300,9 @@ public class UpdateInformationActivity extends ToolBarActivity {
 
                         @Override
                         public void dismissDialog() {
+                            if(progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
                         }
                     });
@@ -827,17 +836,11 @@ public class UpdateInformationActivity extends ToolBarActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         super.onActivityResult(requestCode, resultCode, data);
-
-
         if (resultCode == RESULT_OK) {
-
-
             switch (requestCode) {
                 //相机回调
                 case FileUtil.CAMERA_REQUEST:
-
                     Log.i("", "onActivityResult: " + photoPath);
                     imgUpdateAvatar.setImageBitmap(BitmapFactory.decodeFile(photoPath));
                     flagUpLoad = true;

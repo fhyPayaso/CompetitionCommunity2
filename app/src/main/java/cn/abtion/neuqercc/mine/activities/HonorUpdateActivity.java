@@ -3,12 +3,8 @@ package cn.abtion.neuqercc.mine.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -40,6 +36,7 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
@@ -265,12 +262,15 @@ public class HonorUpdateActivity extends ToolBarActivity {
 
     public void uploadHonorInformation() {
 
+        //弹出progressDialog
+        progressDialog.setMessage(getString(R.string.dialog_wait_moment));
+        progressDialog.show();
+
         //修改证书网络请求
         if (uploadType == 0) {
 
 
             //接口里的顺序差了1
-
 
 
             if (flagUpLoad) {
@@ -300,7 +300,9 @@ public class HonorUpdateActivity extends ToolBarActivity {
 
                     @Override
                     public void dismissDialog() {
-
+                        if(progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
                     }
                 });
 
@@ -326,7 +328,9 @@ public class HonorUpdateActivity extends ToolBarActivity {
 
                     @Override
                     public void dismissDialog() {
-
+                        if(progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
                     }
                 });
 
@@ -337,6 +341,7 @@ public class HonorUpdateActivity extends ToolBarActivity {
             File file = new File(photoPath);
             RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
             MultipartBody.Part part = MultipartBody.Part.createFormData("glory_pic", file.getName(), requestBody);
+
 
             /**
              * 添加证书网络请求
@@ -361,7 +366,9 @@ public class HonorUpdateActivity extends ToolBarActivity {
 
                 @Override
                 public void dismissDialog() {
-
+                    if(progressDialog.isShowing()) {
+                        progressDialog.dismiss();
+                    }
                 }
             });
         }

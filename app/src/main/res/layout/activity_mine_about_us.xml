@@ -26,15 +26,15 @@
         android:gravity="center_horizontal"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_slogan"
-        android:textSize="18sp"
-        android:text="@string/txt_computer_communication"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="21dp"
-        />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/txt_slogan"-->
+        <!--android:textSize="18sp"-->
+        <!--android:text="@string/txt_computer_communication"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:layout_marginTop="21dp"-->
+        <!--/>-->
 
 
     <TextView

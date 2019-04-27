@@ -1,15 +1,9 @@
 package cn.abtion.neuqercc.mine.models;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import cn.abtion.neuqercc.base.models.BaseModel;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 
 /**
  * @author fhyPayaso

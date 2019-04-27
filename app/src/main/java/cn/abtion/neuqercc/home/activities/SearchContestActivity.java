@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.home.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.SpannedString;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.activities.NoBarActivity;
@@ -65,7 +63,7 @@ public class SearchContestActivity extends NoBarActivity {
                     if (editSearchContest.getText().toString().equals(Config.EMPTY_FIELD)) {
                         ToastUtil.showToast(getString(R.string.search_contest_null));
                     } else {
-                        Intent intent = new Intent(SearchContestActivity.this, SearchTeamResultActivity.class);
+                        Intent intent = new Intent(SearchContestActivity.this, SearchContestActivity.class);
                         intent.putExtra("searchContestName", editSearchContest.getText().toString());
                         startActivity(intent);
                     }

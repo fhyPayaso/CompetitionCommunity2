@@ -13,7 +13,6 @@ import java.util.List;
 
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.activities.LoginActivity;
-
 import cn.abtion.neuqercc.mine.models.ShowHonorResponse;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
@@ -126,7 +125,7 @@ public class GridHonorAdapter extends BaseAdapter {
     private void deleteHonor(int order) {
 
 
-        RestClient.getService().deleteHonor(LoginActivity.phoneNumber, order + 1).enqueue(new DataCallback<APIResponse>() {
+        RestClient.getService().deleteHonor(LoginActivity.phoneNumber, order).enqueue(new DataCallback<APIResponse>() {
             @Override
             public void onDataResponse(Call<APIResponse> call, retrofit2.Response<APIResponse> response) {
 

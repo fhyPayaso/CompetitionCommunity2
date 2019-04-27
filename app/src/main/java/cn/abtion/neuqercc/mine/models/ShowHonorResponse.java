@@ -1,7 +1,5 @@
 package cn.abtion.neuqercc.mine.models;
 
-import android.support.annotation.Nullable;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -101,7 +99,7 @@ public class ShowHonorResponse extends BaseModel {
         map.put("order",order);
         map.put("glory_name",glory_name);
         map.put("glory_time",glory_time);
-        map.put("glory_pic",glory_pic);
+//        map.put("glory_pic",glory_pic);
 
         return map;
     }

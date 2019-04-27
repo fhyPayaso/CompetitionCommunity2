@@ -2,7 +2,6 @@ package cn.abtion.neuqercc.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.ScrollView;
 
 /**

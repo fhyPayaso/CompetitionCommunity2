@@ -2,13 +2,10 @@ package cn.abtion.neuqercc.home.fragments;
 
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -22,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import cn.abtion.neuqercc.R;
@@ -58,7 +54,6 @@ public class HomeFragment extends BaseFragment {
 
     @BindView(R.id.vf_contest)
     ViewFlipper vfContest;
-    Unbinder unbinder;
 
     private ArrayList<ContestListModel> contestListModels;
 
@@ -90,11 +85,8 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initView() {
         processInitCarouselFigure();
-
         initViewFlipper();
-
         initContestRecyclerView();
-
     }
 
     @Override
@@ -167,7 +159,9 @@ public class HomeFragment extends BaseFragment {
         recHome.addOnScrollListener(new EndLessOnScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int currentPage) {
-                loadMoreData();
+                if (homeAdapter.getItemCount() >= Config.size) {
+                    loadMoreData();
+                }
             }
         });
 
@@ -178,7 +172,7 @@ public class HomeFragment extends BaseFragment {
             public void onItemClicked(ContestListModel contestListModel, BaseRecyclerViewAdapter.ViewHolder
                     viewHolder) {
                 Intent intent = new Intent(getContext(), CompetitionActivity.class);
-                intent.putExtra("contestName",contestListModel.getTitle());
+                intent.putExtra("contestName", contestListModel.getTitle());
                 intent.putExtra("contestId", contestListModel.getId());
                 startActivity(intent);
             }
@@ -239,6 +233,7 @@ public class HomeFragment extends BaseFragment {
                 List<InitCrouselFigureRequest> list = response.body().getData();
                 for (int i = 0; i < list.size(); i++) {
                     ImageView imageView = new ImageView(getContext());
+                    imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                     Glide.with(HomeFragment.this).load(list.get(i).getUrl()).into(imageView);
                     vfContest.addView(imageView);
                 }
@@ -391,8 +386,6 @@ public class HomeFragment extends BaseFragment {
         outtoRight.setInterpolator(new AccelerateInterpolator());
         return outtoRight;
     }
-
-
 
 
     @OnClick(R.id.search_home)

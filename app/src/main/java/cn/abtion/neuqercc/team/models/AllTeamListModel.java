@@ -1,8 +1,5 @@
 package cn.abtion.neuqercc.team.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import cn.abtion.neuqercc.base.models.BaseModel;
 
 /**

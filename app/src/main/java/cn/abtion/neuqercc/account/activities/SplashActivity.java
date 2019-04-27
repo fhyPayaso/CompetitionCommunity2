@@ -5,15 +5,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-
 import cn.abtion.neuqercc.NEUQerCCApplication;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.models.CheckTokenResponse;
 import cn.abtion.neuqercc.base.activities.NoBarActivity;
 import cn.abtion.neuqercc.common.constants.CacheKey;
-import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.message.data.ChatHelper;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
@@ -22,8 +18,6 @@ import cn.abtion.neuqercc.utils.CacheUtil;
 import cn.abtion.neuqercc.utils.ToastUtil;
 import retrofit2.Call;
 import retrofit2.Response;
-
-import static cn.abtion.neuqercc.account.activities.LoginActivity.password;
 
 /**
  * @author FanHongyu.

@@ -16,16 +16,17 @@
             <ImageView
                 android:id="@+id/img_raiders"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="200dp"
+                android:scaleType="fitXY" />
+
             <TextView
-                android:layout_marginTop="20dp"
                 android:id="@+id/txt_raiders"
-                android:layout_below="@id/img_raiders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/img_raiders"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="60dp"
-                />
+                android:layout_marginTop="20dp" />
         </RelativeLayout>
 
 

@@ -12,6 +12,7 @@ import static android.content.ContentValues.TAG;
 
 /**
  * packaged callback for network response
+ *
  * @author abtion.
  * @since 17/9/22 18:04.
  * email caiheng@hrsoft.net
@@ -28,9 +29,9 @@ public abstract class DataCallback<T> implements Callback<T> {
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
         dismissDialog();
-        if (response.code()>=400){
+        if (response.code() != 200) {
             GlobalAPIErrorHandler.handler(response.code());
-        }else {
+        } else {
             onDataResponse(call, response);
         }
     }
@@ -40,14 +41,14 @@ public abstract class DataCallback<T> implements Callback<T> {
         onDataFailure(call, t);
         dismissDialog();
 
-        //ToastUtil.showToast(t.toString());
-        Log.i(TAG, "onFailure: "+t.toString());
+        ToastUtil.showToast(t.toString());
+        Log.i(TAG, "onFailure: " + t.toString());
 
 
         if (t instanceof ResultException) {
             GlobalAPIErrorHandler.handler((ResultException) t);
         } else {
-            //ToastUtil.showToast("网络连接失败，请稍后再试");
+            ToastUtil.showToast("网络连接失败，请稍后再试");
         }
     }
 }

@@ -1,15 +1,15 @@
 package cn.abtion.neuqercc.widget;
 
-import android.support.v4.BuildConfig;
-import android.support.v7.widget.LinearLayoutManager;
 import android.content.Context;
 import android.graphics.Rect;
+import android.support.v4.BuildConfig;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import java.lang.reflect.Field;
 import android.util.Log;
 import android.view.View;
+
+import java.lang.reflect.Field;
 
 /**
  * @author lszr

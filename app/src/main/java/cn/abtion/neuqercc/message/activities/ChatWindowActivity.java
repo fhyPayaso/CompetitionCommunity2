@@ -20,7 +20,6 @@ import cn.abtion.neuqercc.NEUQerCCApplication;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.message.adapters.ChatWindowRecAdapter;
-import cn.abtion.neuqercc.network.RestClient;
 import cn.abtion.neuqercc.utils.ToastUtil;
 import cn.abtion.neuqercc.utils.Utility;
 

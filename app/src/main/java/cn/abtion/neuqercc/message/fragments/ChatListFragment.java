@@ -1,15 +1,10 @@
 package cn.abtion.neuqercc.message.fragments;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
@@ -23,7 +18,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.activities.LoginActivity;
@@ -38,8 +32,6 @@ import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
 import cn.abtion.neuqercc.network.RestClient;
 import cn.abtion.neuqercc.utils.DateUtils;
-import cn.abtion.neuqercc.utils.ToastUtil;
-import cn.abtion.neuqercc.utils.Utility;
 import cn.abtion.neuqercc.widget.SwipeItemLayout;
 import retrofit2.Call;
 import retrofit2.Response;

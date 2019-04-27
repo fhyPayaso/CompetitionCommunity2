@@ -1,18 +1,12 @@
 package cn.abtion.neuqercc.home.fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.fragments.BaseFragment;
 import cn.abtion.neuqercc.home.models.RaidersAndDetailsRequest;
@@ -25,6 +19,9 @@ import cn.abtion.neuqercc.home.models.RaidersAndDetailsRequest;
 
 public class DetailsFragment extends BaseFragment {
 
+
+    public static final String KEY_DATA = "key_data";
+
     @BindView(R.id.img_details)
     ImageView imgDetails;
     @BindView(R.id.txt_details)
@@ -35,8 +32,6 @@ public class DetailsFragment extends BaseFragment {
     }
 
     private RaidersAndDetailsRequest data;
-
-
 
     @Override
     protected int getLayoutId() {

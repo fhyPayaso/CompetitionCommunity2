@@ -11,17 +11,19 @@ import cn.abtion.neuqercc.utils.ToastUtil;
 
 public class GlobalAPIErrorHandler {
 
-    public static void handler(int code){
-        switch (code){
-
+    public static void handler(int code) {
+        switch (code) {
+            case 500:
+                ToastUtil.showToast("服务器出错啦");
+                break;
             default:
-                ToastUtil.showToast("请求不被允许，请确定是否有权进行该操作");
+                ToastUtil.showToast(code + " : 请求不被允许，请确定是否有权进行该操作");
                 break;
         }
     }
 
-    public static void handler(ResultException r){
-        switch (r.getCode()){
+    public static void handler(ResultException r) {
+        switch (r.getCode()) {
 
             default:
                 ToastUtil.showToast(r.getMsg());

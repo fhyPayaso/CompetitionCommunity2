@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-
 import cn.abtion.neuqercc.common.Config;
 import cn.abtion.neuqercc.home.fragments.HomeFragment;
 import cn.abtion.neuqercc.message.fragments.MessageFragment;
@@ -48,12 +47,12 @@ public class HomeViewPagerAdapter extends FragmentPagerAdapter{
                 }
                 currentFragment=teamFragment;
                 break;
-            case Config.FLAG_MESSAGE:
-                if (messageFragment==null){
-                    messageFragment = new MessageFragment();
-                }
-                currentFragment = messageFragment;
-                break;
+//            case Config.FLAG_MESSAGE:
+//                if (messageFragment==null){
+//                    messageFragment = new MessageFragment();
+//                }
+//                currentFragment = messageFragment;
+//                break;
             case Config.FLAG_MINE:
                 if (mineFragment==null){
                     mineFragment=new MineFragment();

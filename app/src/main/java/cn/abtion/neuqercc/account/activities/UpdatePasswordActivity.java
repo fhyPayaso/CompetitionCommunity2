@@ -1,23 +1,23 @@
 package cn.abtion.neuqercc.account.activities;
 
-import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 import android.widget.Button;
+
+import com.google.gson.JsonObject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.NEUQerCCApplication;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.models.LoginRequest;
+import cn.abtion.neuqercc.account.models.SmsRequest;
+import cn.abtion.neuqercc.account.models.SmsResponse;
 import cn.abtion.neuqercc.account.models.TokenResponse;
 import cn.abtion.neuqercc.account.models.UpdatePasswordRequest;
-import cn.abtion.neuqercc.account.models.SmsRequest;
 import cn.abtion.neuqercc.base.activities.NoBarActivity;
-
 import cn.abtion.neuqercc.common.Config;
 import cn.abtion.neuqercc.common.constants.CacheKey;
-import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.message.data.ChatHelper;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
@@ -103,20 +103,20 @@ public class UpdatePasswordActivity extends NoBarActivity {
 
         //网络请求
 
-        RestClient.getService().captch(smsRequest).enqueue(new DataCallback<APIResponse>() {
+        RestClient.getService().captcha(smsRequest).enqueue(new DataCallback<APIResponse<SmsResponse>>() {
 
             //请求成功时回调
             @Override
-            public void onDataResponse(Call<APIResponse> call, Response<APIResponse> response) {
+            public void onDataResponse(Call<APIResponse<SmsResponse>> call, Response<APIResponse<SmsResponse>> response) {
 
-                verifyCode = response.body().getData().toString();
+                verifyCode = String.valueOf(response.body().getData().getCaptcha());
                 ToastUtil.showToast(getString(R.string.toast_send_successful));
 
             }
 
             //请求失败时回调
             @Override
-            public void onDataFailure(Call<APIResponse> call, Throwable t) {
+            public void onDataFailure(Call<APIResponse<SmsResponse>> call, Throwable t) {
 
             }
 
@@ -326,7 +326,7 @@ public class UpdatePasswordActivity extends NoBarActivity {
             flag = false;
         } else if (!editCaptcha.getText().toString().trim().equals(verifyCode)) {
             showError(editCaptcha, getString(R.string.error_captcha_number_illegal));
-            flag = false;
+//            flag = false;
         } else if (editPassword.getText().toString().trim().length() < Config.PASSWORD_MIN_LIMIT) {
             showError(editPassword, getString(R.string.error_password_min_limit));
             flag = false;

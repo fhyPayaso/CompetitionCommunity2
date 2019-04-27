@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.team.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -11,22 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.abtion.neuqercc.R;
-import cn.abtion.neuqercc.base.activities.NoBarActivity;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.base.adapters.BaseRecyclerViewAdapter;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
 import cn.abtion.neuqercc.network.RestClient;
-import cn.abtion.neuqercc.team.adapters.AllTeamListAdapter;
 import cn.abtion.neuqercc.team.adapters.SearchTeamResultAdapter;
-import cn.abtion.neuqercc.team.adapters.TeamMemberListAdapter;
 import cn.abtion.neuqercc.team.models.AllTeamListModel;
 import cn.abtion.neuqercc.team.models.InitAllTeamResponse;
 import cn.abtion.neuqercc.team.models.SearchResultTeamModel;
 import cn.abtion.neuqercc.widget.CustomLinearLayoutManager;
-import cn.abtion.neuqercc.widget.EndLessOnScrollListener;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -112,17 +106,11 @@ public class SearchTeamResultActivity extends ToolBarActivity {
 
     public void initSearchResultRecylerViewAdapter(){
 
-
-
-
         searchTeamResultAdapter = new SearchTeamResultAdapter(this, searchResultTeamModels);
         recylerSearchTeamResult.setLayoutManager(linearLayoutManager);
         recylerSearchTeamResult.setAdapter(searchTeamResultAdapter);
 
-
-
         //点击事件
-
         searchTeamResultAdapter.setOnItemClickedListener(new BaseRecyclerViewAdapter.OnItemClicked<SearchResultTeamModel>() {
             @Override
             public void onItemClicked(SearchResultTeamModel searchResultTeamModel, BaseRecyclerViewAdapter.ViewHolder holder) {

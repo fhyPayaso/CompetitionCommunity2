@@ -26,7 +26,6 @@ import cn.abtion.neuqercc.common.Config;
 import cn.abtion.neuqercc.common.constants.CacheKey;
 import cn.abtion.neuqercc.message.adapters.NoticeItemListener;
 import cn.abtion.neuqercc.message.adapters.NoticeRecAdapter;
-import cn.abtion.neuqercc.message.models.AddFriendRequest;
 import cn.abtion.neuqercc.message.models.NoticeModel;
 import cn.abtion.neuqercc.mine.models.AddTeamMemberRequest;
 import cn.abtion.neuqercc.network.APIResponse;
@@ -37,7 +36,6 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 import static android.content.ContentValues.TAG;
-import static cn.abtion.neuqercc.utils.Utility.runOnUiThread;
 
 /**
  * @author fhyPayaso

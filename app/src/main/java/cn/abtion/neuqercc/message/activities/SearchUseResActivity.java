@@ -1,6 +1,5 @@
 package cn.abtion.neuqercc.message.activities;
 
-import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 

@@ -2,27 +2,22 @@ package cn.abtion.neuqercc.team.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.activities.LoginActivity;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.common.Config;
-import cn.abtion.neuqercc.home.models.ContestListModel;
 import cn.abtion.neuqercc.home.models.InitContestRecylerViewDataRequest;
 import cn.abtion.neuqercc.home.models.InitContestRecylerViewItemRequest;
-import cn.abtion.neuqercc.mine.activities.UpdateInformationActivity;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
 import cn.abtion.neuqercc.network.RestClient;
@@ -48,12 +43,11 @@ public class EstablishTeamActivity extends ToolBarActivity {
     @BindView(R.id.edit_want_good_at)
     EditText editWantGoodAt;
 
-    private String [] stringList;
+    private String[] stringList;
 
-    public static int page=1;
+    public static int page = 1;
     private int flagTempGrade = 0;
     private int flagGrade = -1;
-
 
 
     @Override
@@ -124,8 +118,6 @@ public class EstablishTeamActivity extends ToolBarActivity {
     }
 
 
-
-
     @OnClick(R.id.edit_want_join)
     public void onViewClicked() {
         showContestName();
@@ -147,13 +139,21 @@ public class EstablishTeamActivity extends ToolBarActivity {
                     (Call<APIResponse<InitContestRecylerViewDataRequest<List<InitContestRecylerViewItemRequest>>>>
                              call, Response<APIResponse<InitContestRecylerViewDataRequest<List
                             <InitContestRecylerViewItemRequest>>>> response) {
-                List<InitContestRecylerViewItemRequest> list = response.body().getData().getItem();
+
+
+                final List<InitContestRecylerViewItemRequest> list = response.body().getData().getItem();
 
 
                 if (list != null) {
-                    stringList=new String[20];
+
+                    if (progressDialog.isShowing()) {
+                        disMissProgressDialog();
+                    }
+
+
+                    stringList = new String[list.size()];
                     for (int i = 0; i < list.size(); i++) {
-                        stringList[i]=list.get(i).getName();
+                        stringList[i] = list.get(i).getName();
                     }
 
                     DialogUtil.NativeDialog nativeDialog = new DialogUtil().new NativeDialog().singleInit
@@ -170,7 +170,7 @@ public class EstablishTeamActivity extends ToolBarActivity {
                         public void onClick(DialogInterface dialog, int which) {
 
                             flagGrade = flagTempGrade;
-                            editWantJoin.setText(stringList[flagGrade].trim());
+                            editWantJoin.setText(list.get(flagGrade).getName());
                         }
                     });
 
@@ -192,8 +192,6 @@ public class EstablishTeamActivity extends ToolBarActivity {
                 }
             }
         });
-
-
 
 
     }

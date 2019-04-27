@@ -26,10 +26,12 @@ public class Config {
     /**
      * APP Server 网络请求BaseUrl
      */
-    /**
-     * public static final String APP_SERVER_BASE_URL = "http://oj.marklux.cn/";
-     */
-    public static final String APP_SERVER_BASE_URL = "http://www.thmaoqiu.cn/";
+//    public static final String APP_SERVER_BASE_URL = "http://neuqercc.thmaoqiu.cn/";
+
+//    public static final String APP_SERVER_BASE_URL = "http://www.thmaoqiu.cn/";
+
+
+    public static final String APP_SERVER_BASE_URL = "http://139.199.37.219:80/";
 
     /**
      * APP Server 网络请求连接超时时间，单位：s
@@ -53,8 +55,8 @@ public class Config {
     public static final int FLAG_HOME = 0;
     public static final int FLAG_TEAM = 1;
     public static final int FLAG_MESSAGE = 2;
-    public static final int FLAG_MINE = 3;
-    public static final int PAGE_LIMIT = 4;
+    public static final int FLAG_MINE = 2;
+    public static final int PAGE_LIMIT = 3;
 
     /**
      * 赛事页面page标记

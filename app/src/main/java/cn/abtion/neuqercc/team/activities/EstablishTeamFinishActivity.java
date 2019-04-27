@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.team.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -11,20 +10,17 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.account.activities.LoginActivity;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.mine.models.PersonInformationResponse;
+import cn.abtion.neuqercc.mine.models.TeamMemberResponse;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
 import cn.abtion.neuqercc.network.RestClient;
-import cn.abtion.neuqercc.mine.models.TeamMemberResponse;
 import cn.abtion.neuqercc.team.adapters.TeamMemberListAdapter;
 import cn.abtion.neuqercc.team.models.EstablishTeamRequest;
-import cn.abtion.neuqercc.team.models.TeamMemberListModel;
 import cn.abtion.neuqercc.utils.ToastUtil;
 import cn.abtion.neuqercc.widget.CustomLinearLayoutManager;
 import retrofit2.Call;
@@ -114,6 +110,7 @@ public class EstablishTeamFinishActivity extends ToolBarActivity {
         txtTeamName.setText(establishTeamRequest.getTeam_name());
         txtContestName.setText(establishTeamRequest.getCompetition_desc());
         txtTeamDeclaration.setText(establishTeamRequest.getDeclaration());
+
 
     }
 

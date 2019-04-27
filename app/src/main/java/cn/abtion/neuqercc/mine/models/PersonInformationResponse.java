@@ -1,9 +1,6 @@
 package cn.abtion.neuqercc.mine.models;
 
-import java.util.List;
-
 import cn.abtion.neuqercc.base.models.BaseModel;
-import cn.abtion.neuqercc.home.models.InitCrouselFigureRequest;
 
 /**
  * @author fhyPayaso

@@ -1,11 +1,6 @@
 package cn.abtion.neuqercc.mine.activities;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,14 +8,12 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.common.Config;
 import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.mine.models.ShowHonorResponse;
-import cn.abtion.neuqercc.utils.ToastUtil;
 
 /**
  * @author fhyPayaso

@@ -3,14 +3,11 @@ package cn.abtion.neuqercc.widget;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ViewFlipper;
 
-import butterknife.BindView;
-import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.common.Config;
 
 import static android.view.MotionEvent.ACTION_UP;

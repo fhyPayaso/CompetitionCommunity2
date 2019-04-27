@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
@@ -10,13 +9,10 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMOptions;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import cn.abtion.neuqercc.account.activities.LoginActivity;
@@ -24,7 +20,6 @@ import cn.abtion.neuqercc.message.data.ChatHelper;
 import cn.abtion.neuqercc.utils.CacheUtil;
 
 import static android.content.ContentValues.TAG;
-import static cn.abtion.neuqercc.BuildConfig.DEBUG;
 
 /**
  * @author abtion.

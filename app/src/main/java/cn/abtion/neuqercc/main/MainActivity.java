@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.transition.Fade;
 import android.support.transition.TransitionManager;
-
 import android.support.v4.view.ViewPager;
-import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -134,9 +132,9 @@ public class MainActivity extends NoBarActivity {
             case Config.FLAG_TEAM:
                 changeTeamMenuStatus();
                 break;
-            case Config.FLAG_MESSAGE:
-                changeMessageMenuStatus();
-                break;
+//            case Config.FLAG_MESSAGE:
+//                changeMessageMenuStatus();
+//                break;
             case Config.FLAG_MINE:
                 changeMineMenuStatus();
                 break;

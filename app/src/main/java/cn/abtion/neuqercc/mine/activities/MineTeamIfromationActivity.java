@@ -171,6 +171,6 @@ public class MineTeamIfromationActivity extends ToolBarActivity {
 
     @OnClick(R.id.btn_join_team)
     public void onButtonInviteFriendClicked() {
-        InviteFriendListActivity.startActivity(MineTeamIfromationActivity.this,teamId,teamName);
+//        InviteFriendListActivity.startActivity(MineTeamIfromationActivity.this,teamId,teamName);
     }
 }

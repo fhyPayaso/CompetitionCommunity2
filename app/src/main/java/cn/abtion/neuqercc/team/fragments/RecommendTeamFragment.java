@@ -36,11 +36,11 @@ import retrofit2.Response;
 public class RecommendTeamFragment extends BaseFragment {
     @BindView(R.id.recyler_recommend_team)
     RecyclerView recylerRecommendTeam;
-    private ArrayList<RecommendTeamListModel> recommendTeamListModels=new ArrayList<>();
-    private int page=1;
+    private ArrayList<RecommendTeamListModel> recommendTeamListModels = new ArrayList<>();
+    private int page = 1;
     private RecommendTeamListAdapter recommendTeamListAdapter;
 
-    private LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+    private LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
     @Override
     protected int getLayoutId() {
@@ -64,18 +64,18 @@ public class RecommendTeamFragment extends BaseFragment {
 
     }
 
-    public void processInitRecommendTeam(){
+    public void processInitRecommendTeam() {
 
         //弹出progressDialog
         progressDialog.setMessage(getString(R.string.dialog_wait_moment));
         progressDialog.show();
 
         //网络请求
-        RestClient.getService().initRecommendTeam(LoginActivity.phoneNumber,page, Config.size).enqueue(new DataCallback<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>>() {
+        RestClient.getService().initRecommendTeam(LoginActivity.phoneNumber, page, Config.size).enqueue(new DataCallback<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>>() {
             @Override
             public void onDataResponse(Call<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>> call, Response<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>> response) {
-                recommendTeamListModels=new ArrayList<>();
-                for (int i=0;i<response.body().getData().getItem().size();i++){
+                recommendTeamListModels = new ArrayList<>();
+                for (int i = 0; i < response.body().getData().getItem().size(); i++) {
                     recommendTeamListModels.add(new RecommendTeamListModel(
                             response.body().getData().getItem().get(i).getTeam_name(),
                             response.body().getData().getItem().get(i).getCompetition_desc(),
@@ -101,15 +101,17 @@ public class RecommendTeamFragment extends BaseFragment {
         });
     }
 
-    public void setRecommendTeamAdapter(){
-        recommendTeamListAdapter=new RecommendTeamListAdapter(getContext(),recommendTeamListModels);
+    public void setRecommendTeamAdapter() {
+        recommendTeamListAdapter = new RecommendTeamListAdapter(getContext(), recommendTeamListModels);
         recylerRecommendTeam.setAdapter(recommendTeamListAdapter);
         recylerRecommendTeam.setLayoutManager(linearLayoutManager);
 
         recylerRecommendTeam.addOnScrollListener(new EndLessOnScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int currentPage) {
-                loadMoreData();
+                if (recommendTeamListAdapter.getItemCount() >= Config.size) {
+                    loadMoreData();
+                }
             }
         });
 
@@ -118,10 +120,10 @@ public class RecommendTeamFragment extends BaseFragment {
         recommendTeamListAdapter.setOnItemClickedListener(new BaseRecyclerViewAdapter.OnItemClicked<RecommendTeamListModel>() {
             @Override
             public void onItemClicked(RecommendTeamListModel recommendTeamListModel, BaseRecyclerViewAdapter.ViewHolder holder) {
-                Intent intent=new Intent(getContext(),TeamInformationActivity.class);
+                Intent intent = new Intent(getContext(), TeamInformationActivity.class);
 
-                String gson=new Gson().toJson(recommendTeamListModel);
-                intent.putExtra("teamInformation",gson);
+                String gson = new Gson().toJson(recommendTeamListModel);
+                intent.putExtra("teamInformation", gson);
 
                 startActivity(intent);
             }
@@ -129,11 +131,11 @@ public class RecommendTeamFragment extends BaseFragment {
     }
 
     private void loadMoreData() {
-        RestClient.getService().initRecommendTeam(LoginActivity.phoneNumber,++page, Config.size).enqueue(new DataCallback<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>>() {
+        RestClient.getService().initRecommendTeam(LoginActivity.phoneNumber, ++page, Config.size).enqueue(new DataCallback<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>>() {
             @Override
             public void onDataResponse(Call<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>> call, Response<APIResponse<InitRecommendTeamDataResponse<List<InitRecommendTeamResponse>>>> response) {
-                if (response.body().getData().getItem()!=null){
-                    for (int i=0;i<response.body().getData().getItem().size();i++){
+                if (response.body().getData().getItem() != null) {
+                    for (int i = 0; i < response.body().getData().getItem().size(); i++) {
                         recommendTeamListModels.add(new RecommendTeamListModel(
                                 response.body().getData().getItem().get(i).getTeam_name(),
                                 response.body().getData().getItem().get(i).getCompetition_desc(),

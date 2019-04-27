@@ -113,7 +113,7 @@
     <string name="toast_lack_information">请输入完整信息</string>
     <string name="toast_edit_successful">编辑成功</string>
     <string name="toast_password_error">密码错误</string>
-    <string name="toast_commit_successful">提交成功</string>
+    <string name="toast_commit_successful">提交成功，感谢您的反馈</string>
     <string name="toast_feedback_empty">请填写反馈内容</string>
     <string name="dialog_if_sign_out">是否退出当前账号?</string>
     <string name="title_honor_information">荣誉信息</string>

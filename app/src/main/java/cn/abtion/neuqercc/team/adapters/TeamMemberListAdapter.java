@@ -12,7 +12,6 @@ import butterknife.BindView;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.adapters.BaseRecyclerViewAdapter;
 import cn.abtion.neuqercc.mine.models.TeamMemberResponse;
-import cn.abtion.neuqercc.team.models.TeamMemberListModel;
 
 /**
  * @author lszr

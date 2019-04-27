@@ -14,8 +14,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import cn.abtion.neuqercc.NEUQerCCApplication;
-import cn.abtion.neuqercc.account.activities.LoginActivity;
-import cn.abtion.neuqercc.account.activities.SplashActivity;
 import cn.abtion.neuqercc.common.constants.CacheKey;
 import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.utils.ToastUtil;
@@ -110,6 +108,8 @@ public class ChatHelper {
                 public void onError(int code, String error) {
 
                     Log.i("login", "onError: EM登录失败，" + error);
+                    activity.startActivity(new Intent(activity, MainActivity.class));
+                    activity.finish();
                 }
 
                 @Override

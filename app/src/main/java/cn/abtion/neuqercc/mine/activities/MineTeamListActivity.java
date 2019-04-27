@@ -3,7 +3,6 @@ package cn.abtion.neuqercc.mine.activities;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;

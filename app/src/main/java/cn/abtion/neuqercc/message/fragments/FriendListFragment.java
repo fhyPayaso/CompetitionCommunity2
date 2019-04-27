@@ -1,12 +1,9 @@
 package cn.abtion.neuqercc.message.fragments;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import com.hyphenate.chat.EMMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +22,6 @@ import cn.abtion.neuqercc.message.activities.FriendInfoActivity;
 import cn.abtion.neuqercc.message.adapters.FriendItemListener;
 import cn.abtion.neuqercc.message.adapters.FriendsRecAdapter;
 import cn.abtion.neuqercc.message.models.FriendModel;
-import cn.abtion.neuqercc.message.models.SearchUserModel;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
 import cn.abtion.neuqercc.network.RestClient;

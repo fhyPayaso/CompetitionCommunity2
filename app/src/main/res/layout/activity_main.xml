@@ -62,7 +62,8 @@
 
         <LinearLayout
             android:id="@+id/ly_tab_menu_message"
-            style="@style/tab_menu_item">
+            style="@style/tab_menu_item"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/img_tab_menu_message"

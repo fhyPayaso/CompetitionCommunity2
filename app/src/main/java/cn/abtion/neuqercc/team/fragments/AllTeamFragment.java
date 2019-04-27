@@ -37,10 +37,10 @@ public class AllTeamFragment extends BaseFragment {
     @BindView(R.id.recyler_all_team)
     RecyclerView recylerAllTeam;
     private ArrayList<AllTeamListModel> allTeamListModels;
-    private static int page=1;
+    private static int page = 1;
 
     private AllTeamListAdapter allTeamListAdapter;
-    private LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+    private LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
     @Override
     protected int getLayoutId() {
@@ -62,16 +62,18 @@ public class AllTeamFragment extends BaseFragment {
 
     }
 
-    public void setAllTeamAdapter(){
+    public void setAllTeamAdapter() {
 
-        allTeamListAdapter=new AllTeamListAdapter(getContext(),allTeamListModels);
+        allTeamListAdapter = new AllTeamListAdapter(getContext(), allTeamListModels);
         recylerAllTeam.setAdapter(allTeamListAdapter);
         recylerAllTeam.setLayoutManager(linearLayoutManager);
 
         recylerAllTeam.addOnScrollListener(new EndLessOnScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int currentPage) {
-                loadMoreData();
+                if (allTeamListAdapter.getItemCount() >= Config.size) {
+                    loadMoreData();
+                }
             }
         });
 
@@ -81,9 +83,9 @@ public class AllTeamFragment extends BaseFragment {
         allTeamListAdapter.setOnItemClickedListener(new BaseRecyclerViewAdapter.OnItemClicked<AllTeamListModel>() {
             @Override
             public void onItemClicked(AllTeamListModel allTeamListModel, BaseRecyclerViewAdapter.ViewHolder holder) {
-                Intent intent=new  Intent(getContext(),TeamInformationActivity.class);
-                String gson=new Gson().toJson(allTeamListModel);
-                intent.putExtra("teamInformation",gson);
+                Intent intent = new Intent(getContext(), TeamInformationActivity.class);
+                String gson = new Gson().toJson(allTeamListModel);
+                intent.putExtra("teamInformation", gson);
                 startActivity(intent);
             }
         });
@@ -94,9 +96,9 @@ public class AllTeamFragment extends BaseFragment {
         RestClient.getService().initAllTeam(++page, Config.size).enqueue(new DataCallback<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>>() {
             @Override
             public void onDataResponse(Call<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>> call, Response<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>> response) {
-                if(response.body().getData()!=null){
+                if (response.body().getData() != null) {
 //                    allTeamListModels=new ArrayList<>();
-                    for (int i=0;i<response.body().getData().getItem().size();i++){
+                    for (int i = 0; i < response.body().getData().getItem().size(); i++) {
                         allTeamListModels.add(new AllTeamListModel(
                                 response.body().getData().getItem().get(i).getTeam_name(),
                                 response.body().getData().getItem().get(i).getCompetition_desc(),
@@ -123,7 +125,7 @@ public class AllTeamFragment extends BaseFragment {
 
     }
 
-    public void porcessInitAllTeam(){
+    public void porcessInitAllTeam() {
         //弹出progressDialog
         progressDialog.setMessage(getString(R.string.dialog_wait_moment));
         progressDialog.show();
@@ -132,14 +134,14 @@ public class AllTeamFragment extends BaseFragment {
         RestClient.getService().initAllTeam(page, Config.size).enqueue(new DataCallback<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>>() {
             @Override
             public void onDataResponse(Call<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>> call, Response<APIResponse<InitAllTeamDataResponse<List<InitAllTeamResponse>>>> response) {
-                allTeamListModels=new ArrayList<>();
-                for (int i=0;i<response.body().getData().getItem().size();i++){
+                allTeamListModels = new ArrayList<>();
+                for (int i = 0; i < response.body().getData().getItem().size(); i++) {
                     allTeamListModels.add(new AllTeamListModel(
-                                    response.body().getData().getItem().get(i).getTeam_name(),
-                                    response.body().getData().getItem().get(i).getCompetition_desc(),
-                                    response.body().getData().getItem().get(i).getGood_at(),
-                                    response.body().getData().getItem().get(i).getDeclaration(),
-                                    response.body().getData().getItem().get(i).getId()));
+                            response.body().getData().getItem().get(i).getTeam_name(),
+                            response.body().getData().getItem().get(i).getCompetition_desc(),
+                            response.body().getData().getItem().get(i).getGood_at(),
+                            response.body().getData().getItem().get(i).getDeclaration(),
+                            response.body().getData().getItem().get(i).getId()));
                 }
                 setAllTeamAdapter();
 

@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.team.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.SpannedString;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.activities.NoBarActivity;

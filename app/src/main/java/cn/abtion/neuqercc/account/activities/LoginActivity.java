@@ -4,11 +4,6 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
-
-import java.util.Arrays;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.abtion.neuqercc.NEUQerCCApplication;
@@ -18,7 +13,6 @@ import cn.abtion.neuqercc.account.models.TokenResponse;
 import cn.abtion.neuqercc.base.activities.NoBarActivity;
 import cn.abtion.neuqercc.common.Config;
 import cn.abtion.neuqercc.common.constants.CacheKey;
-import cn.abtion.neuqercc.main.MainActivity;
 import cn.abtion.neuqercc.message.data.ChatHelper;
 import cn.abtion.neuqercc.network.APIResponse;
 import cn.abtion.neuqercc.network.DataCallback;
@@ -119,7 +113,6 @@ public class LoginActivity extends NoBarActivity {
             public void onDataResponse(Call<APIResponse<TokenResponse>> call, Response<APIResponse<TokenResponse>>
                     response) {
 
-
                 //登录成功信息保存
                 phoneNumber = editIdentifier.getText().toString().trim();
                 password = editPassword.getText().toString().trim();
@@ -131,12 +124,9 @@ public class LoginActivity extends NoBarActivity {
                     cacheUtil.putString(CacheKey.PHONE_NUMBER, phoneNumber);
                     cacheUtil.putString(CacheKey.PASSWORD, password);
                 }
-
-
                 //成功提示
                 Log.i(TAG, "onDataResponse: " + "常规登录成功" + token);
                 ToastUtil.showToast(getString(R.string.toast_login_successful));
-
 
                 ChatHelper.loginEM(LoginActivity.this);
             }

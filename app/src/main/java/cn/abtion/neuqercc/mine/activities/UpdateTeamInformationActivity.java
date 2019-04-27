@@ -1,7 +1,6 @@
 package cn.abtion.neuqercc.mine.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,7 +8,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.abtion.neuqercc.R;
 import cn.abtion.neuqercc.base.activities.ToolBarActivity;
 import cn.abtion.neuqercc.common.Config;
@@ -39,6 +37,8 @@ public class UpdateTeamInformationActivity extends ToolBarActivity {
     EditText editWantJoin;
     @BindView(R.id.edit_team_declaration)
     EditText editTeamDeclaration;
+    @BindView(R.id.edit_team_member_adept)
+    EditText editGoodAt;
 
 
     public static int teamId;
@@ -106,6 +106,7 @@ public class UpdateTeamInformationActivity extends ToolBarActivity {
         editTeamName.setText(teamInformationRequest.getTeamName());
         editWantJoin.setText(teamInformationRequest.getCompetitionDesc());
         editTeamDeclaration.setText(teamInformationRequest.getDeclaration());
+        editGoodAt.setText(teamInformationRequest.getGoodAt());
 
     }
 
@@ -119,7 +120,7 @@ public class UpdateTeamInformationActivity extends ToolBarActivity {
                 editTeamName.getText().toString(),
                 editWantJoin.getText().toString(),
                 editTeamDeclaration.getText().toString(),
-                "test"
+                editGoodAt.getText().toString()
         );
 
 

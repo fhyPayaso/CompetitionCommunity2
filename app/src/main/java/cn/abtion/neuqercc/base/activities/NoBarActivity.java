@@ -3,7 +3,6 @@ package cn.abtion.neuqercc.base.activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import java.sql.Time;
 import java.util.Calendar;
 
 /**

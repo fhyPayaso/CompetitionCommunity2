@@ -1,7 +1,5 @@
 package cn.abtion.neuqercc.team.models;
 
-import java.util.List;
-
 import cn.abtion.neuqercc.base.models.BaseModel;
 
 /**
