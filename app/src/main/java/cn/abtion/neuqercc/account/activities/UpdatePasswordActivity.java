@@ -326,7 +326,7 @@ public class UpdatePasswordActivity extends NoBarActivity {
             flag = false;
         } else if (!editCaptcha.getText().toString().trim().equals(verifyCode)) {
             showError(editCaptcha, getString(R.string.error_captcha_number_illegal));
-//            flag = false;
+            flag = false;
         } else if (editPassword.getText().toString().trim().length() < Config.PASSWORD_MIN_LIMIT) {
             showError(editPassword, getString(R.string.error_password_min_limit));
             flag = false;
