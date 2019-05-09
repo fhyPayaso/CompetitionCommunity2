@@ -1,0 +1,54 @@
+// ******************************************** 编译相关 ********************************************//
+def buildVersions = [
+        compileSdk: 28,
+        minSdk    : 15,
+        targetSdk : 28,
+        gradle    : "3.2.1",
+        kotlin    : '1.2.71'
+]
+ext.buildVersions = buildVersions
+
+def buildLib = [
+        gradle      : "com.android.tools.build:gradle:$buildVersions.gradle",
+        kotlinGradle: "org.jetbrains.kotlin:kotlin-gradle-plugin:$buildVersions.kotlin",
+        kotlin      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$buildVersions.kotlin",
+]
+
+ext.buildLib = buildLib
+// ******************************************** 依赖相关 ********************************************//
+def deps = [:]
+def depsVersions = [
+        support: "28.0.0",
+        paging : "1.0.0",
+        dagger : "2.17"
+]
+
+def android = [
+        v4          : "com.android.support:support-v4:$depsVersions.support",
+        v7          : "com.android.support:appcompat-v7:$depsVersions.support",
+        recyclerview: "com.android.support:recyclerview-v7:$depsVersions.support",
+        design      : "com.android.support:design:$depsVersions.support",
+        paging      : "android.arch.paging:runtime:$depsVersions.paging",
+]
+deps.android = android
+
+
+def dagger = [
+        dagger                  : "com.google.dagger:dagger:$depsVersions.dagger",
+        dagger_android          : "com.google.dagger:dagger-android:$depsVersions.dagger",
+        dagger_android_support  : "com.google.dagger:dagger-android-support:$depsVersions.dagger",
+        dagger_compiler         : "com.google.dagger:dagger-compiler:$depsVersions.dagger",
+        dagger_android_processor: "com.google.dagger:dagger-android-processor:$depsVersions.dagger"
+]
+deps.dagger = dagger
+
+
+ext.deps = deps
+// ******************************************** 远程仓库相关 ********************************************//
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addRepos = this.&addRepos
