@@ -1,9 +1,5 @@
-include ':app', ':core', ':launch'
+include ':app', ':core', ':launch', ':main', ':mainapi'
 
 include ':account'
-//project(':account').projectDir = new File(settingsDir, "components/account/${project(':account').name}")
-//project(':account').buildFileName = "${project(':account').name}.gradle"
 
 include ':accountapi'
-//project(':accountapi').projectDir = new File(settingsDir, "components/account/${project(':accountapi').name}")
-//project(':accountapi').buildFileName = "${project(':accountapi').name}.gradle"

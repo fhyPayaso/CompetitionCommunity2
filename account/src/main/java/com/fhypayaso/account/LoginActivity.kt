@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         fun start(context: Context) {
-            context.startActivity(Intent(context, LoginActivity.javaClass))
+            context.startActivity(Intent(context, LoginActivity::class.java))
         }
     }
 }

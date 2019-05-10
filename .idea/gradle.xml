@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/launch" />
+            <option value="$PROJECT_DIR$/main" />
+            <option value="$PROJECT_DIR$/mainapi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

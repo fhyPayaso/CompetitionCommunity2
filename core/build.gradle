@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -37,4 +38,13 @@ dependencies {
     api deps.android.v7
     api deps.android.design
 
+    api deps.dagger.dagger
+
+    api project(":mainapi")
+    api project(":accountapi")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}
+repositories {
+    mavenCentral()
 }
