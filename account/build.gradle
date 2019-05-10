@@ -16,6 +16,12 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+
     }
 
     buildTypes {
@@ -37,8 +43,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     implementation project(':core')
-    kapt deps.dagger.dagger_compiler
 
+    kapt deps.dagger.dagger_apt
+    kapt deps.arouter.arouter_apt
 }
 repositories {
     mavenCentral()

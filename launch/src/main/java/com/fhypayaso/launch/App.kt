@@ -1,6 +1,7 @@
 package com.fhypayaso.launch
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 import com.fhypayaso.core.Graph
 
 /**
@@ -13,5 +14,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Graph.getInstance().init(DaggerAppComponent.create())
+        ARouter.init(this)
     }
 }

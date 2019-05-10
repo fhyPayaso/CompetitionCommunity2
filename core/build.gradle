@@ -39,6 +39,7 @@ dependencies {
     api deps.android.design
 
     api deps.dagger.dagger
+    api deps.arouter.arouter
 
     api project(":mainapi")
     api project(":accountapi")

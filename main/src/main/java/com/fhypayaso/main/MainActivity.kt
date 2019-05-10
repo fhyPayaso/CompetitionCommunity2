@@ -3,6 +3,7 @@ package com.fhypayaso.main
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.alibaba.android.arouter.launcher.ARouter
 import com.fhypayaso.accountapi.AccountService
 import com.fhypayaso.core.Graph
 import com.fhypayaso.main.dagger.MainComponent
@@ -38,7 +39,8 @@ class MainActivity : AppCompatActivity() {
         Graph.getInstance().getGraph(MainComponent::class.java).inject(this)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         message.setOnClickListener {
-            accountService.startLoginActivity(this)
+            //            accountService.startLoginActivity(this)
+            ARouter.getInstance().build("/account/login").navigation()
         }
 
     }

@@ -35,13 +35,18 @@ deps.android = android
 
 def dagger = [
         dagger                  : "com.google.dagger:dagger:$depsVersions.dagger",
+        dagger_apt         : "com.google.dagger:dagger-compiler:$depsVersions.dagger",
         dagger_android          : "com.google.dagger:dagger-android:$depsVersions.dagger",
         dagger_android_support  : "com.google.dagger:dagger-android-support:$depsVersions.dagger",
-        dagger_compiler         : "com.google.dagger:dagger-compiler:$depsVersions.dagger",
         dagger_android_processor: "com.google.dagger:dagger-android-processor:$depsVersions.dagger"
 ]
 deps.dagger = dagger
 
+def arouter = [
+        arouter    : "com.alibaba:arouter-api:1.3.0",
+        arouter_apt: "com.alibaba:arouter-compiler:1.1.4"
+]
+deps.arouter = arouter
 
 ext.deps = deps
 // ******************************************** 远程仓库相关 ********************************************//

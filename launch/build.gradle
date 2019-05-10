@@ -39,7 +39,7 @@ dependencies {
     implementation project(":account")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    kapt deps.dagger.dagger_compiler
+    kapt deps.dagger.dagger_apt
 
 }
 repositories {
