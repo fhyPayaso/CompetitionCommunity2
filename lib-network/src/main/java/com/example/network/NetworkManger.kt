@@ -5,6 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
 import okhttp3.logging.HttpLoggingInterceptor.Level.NONE
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.HashMap
 
@@ -19,7 +20,7 @@ class NetworkManger private constructor() {
     private val mServiceCache: HashMap<String?, Any> = HashMap()
 
     companion object {
-        const val BASE_URL = "localtest:8080"
+        const val BASE_URL = "http://10.13.25.147:8080/"
         val inst = SingletonHolder.holder
     }
 
@@ -36,6 +37,7 @@ class NetworkManger private constructor() {
     private fun getRetrofitClient() = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(getOkHttpClient())
         .build()
 
@@ -51,7 +53,7 @@ class NetworkManger private constructor() {
         }
         val retrofitService = mRetrofit.create(service)
         mServiceCache[service.canonicalName] = retrofitService
-        return service as T
+        return retrofitService
     }
 
 

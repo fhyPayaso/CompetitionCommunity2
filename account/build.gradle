@@ -43,6 +43,3 @@ dependencies {
     kapt deps.dagger.dagger_apt
     kapt deps.arouter.arouter_apt
 }
-repositories {
-    mavenCentral()
-}

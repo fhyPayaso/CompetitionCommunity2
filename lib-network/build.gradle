@@ -30,7 +30,7 @@ dependencies {
 
 
     api deps.network.retrofit
-    implementation deps.network.retrofit_convert_gson
+    api deps.network.retrofit_convert_gson
     implementation deps.network.retrofit_adapter_rxjava
     implementation deps.network.okhttp_logging
     implementation deps.rx.rxjava

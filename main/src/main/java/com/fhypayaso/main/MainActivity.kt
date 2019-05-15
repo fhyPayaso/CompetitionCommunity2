@@ -1,8 +1,11 @@
 package com.fhypayaso.main
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.fhypayaso.accountapi.AccountService
 import com.fhypayaso.core.Graph
@@ -10,10 +13,11 @@ import com.fhypayaso.main.dagger.MainComponent
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
+@Route(path = "/main/home")
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var accountService: AccountService
+    lateinit var accountApi: AccountService
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -39,9 +43,17 @@ class MainActivity : AppCompatActivity() {
         Graph.getInstance().getGraph(MainComponent::class.java).inject(this)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         message.setOnClickListener {
-            //            accountService.startLoginActivity(this)
             ARouter.getInstance().build("/account/login").navigation()
         }
 
     }
+
+
+    companion object {
+        fun start(context: Context) {
+            context.startActivity(Intent(context, MainActivity::class.java))
+        }
+    }
+
+
 }

@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+
     }
 
     buildTypes {
@@ -37,4 +43,5 @@ dependencies {
     implementation project(':core')
 
     kapt deps.dagger.dagger_apt
+    kapt deps.arouter.arouter_apt
 }

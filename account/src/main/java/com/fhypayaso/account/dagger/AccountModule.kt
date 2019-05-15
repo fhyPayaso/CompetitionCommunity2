@@ -14,7 +14,7 @@ class AccountModule {
 
     @Provides
     fun provideAccountService(): AccountService {
-        return AccountServiceImpl()
+        return AccountApiImpl()
     }
 
 }
