@@ -1,0 +1,55 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+	package
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:2:11-42
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:1-15:12
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:5:5-13:19
+	android:supportsRtl
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:8:13-39
+	android:label
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:7:13-45
+	android:allowBackup
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:6:13-39
+	android:theme
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:9:13-44
+activity#com.fhypayaso.account.LoginActivity
+ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:11:9-50
+	android:name
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:11:19-48
+activity#com.fhypayaso.account.RegisterActivity
+ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:12:9-53
+	android:name
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml:12:19-51
+uses-sdk
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		ADDED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml
+		INJECTED from /Users/fanhongyu/workspace/NEUQerCC/components/comp-account/account/src/main/AndroidManifest.xml

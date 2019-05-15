@@ -1,8 +1,9 @@
 package com.fhypayaso.launch
 
 import android.app.Application
-import com.alibaba.android.arouter.launcher.ARouter
-import com.fhypayaso.core.Graph
+import com.fhypayaso.launch.task.ARouterTask
+import com.fhypayaso.launch.task.DaggerTask
+import com.fhypayaso.launch.task.RetrofitTask
 
 /**
  *
@@ -11,9 +12,14 @@ import com.fhypayaso.core.Graph
  */
 class App : Application() {
 
+    private val mTaskList: List<LaunchTask> = listOf(
+        ARouterTask(),
+        DaggerTask(),
+        RetrofitTask()
+    )
+
     override fun onCreate() {
         super.onCreate()
-        Graph.getInstance().init(DaggerAppComponent.create())
-        ARouter.init(this)
+        mTaskList.forEach { it.runTask(this) }
     }
 }

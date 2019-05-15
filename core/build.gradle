@@ -40,12 +40,14 @@ dependencies {
 
     api deps.dagger.dagger
     api deps.arouter.arouter
+    api deps.rx.rxjava
+    api deps.rx.rxandroid
 
     api project(":mainapi")
     api project(":accountapi")
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api project(":lib-network")
 
-}
-repositories {
-    mavenCentral()
+
+    api buildLib.kotlin
+
 }

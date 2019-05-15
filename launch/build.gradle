@@ -37,11 +37,6 @@ dependencies {
     api project(":core")
     implementation project(":main")
     implementation project(":account")
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     kapt deps.dagger.dagger_apt
 
-}
-repositories {
-    mavenCentral()
 }

@@ -1,4 +1,4 @@
-include ':app', ':core', ':launch', ':main', ':mainapi'
+include ':app', ':core', ':launch', ':main', ':mainapi', ':lib-network'
 
 include ':account'
 
